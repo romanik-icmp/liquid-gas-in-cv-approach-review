@@ -1,0 +1,206 @@
+\section{\label{app:cumulant_calc}Cumulants calculation}
+For the sake of simplicity, in this Appendix we will omit the subscript $0$ at the notation for averages, $\langle\dotsc\rangle_0 \Rightarrow  \langle\dotsc\rangle$, and also will understand $\Psi_N \equiv\Psi_N(\vb r^N)$.
+\subsection{$n=1$}
+\begin{equation}
+	\mathfrak{M}_1(\vb k) = \langle \hat{\rho}_{\vb k} \rangle.
+\end{equation}
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k} \rangle &=& \Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int \sum_{j=1}^N \exp(-{\rm i}\vb k\vb r_j) \exp(-\beta\Psi_N) {\rm d} {\vb r}^N 
+	\nonumber\\
+	&=&\Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int \exp(-{\rm i}\vb k\vb{r}') \sum_{j=1}^N \delta(\vb r' - \vb r_j) \exp(-\beta\Psi_N) {\rm d} {\vb r}^N {\rm d}{\vb r'}
+	\nonumber\\
+	&=&\int \exp(-{\rm i}\vb k\vb{r}') \left\langle \sum_{j=1}^N \delta(\vb r' - \vb r_j) \right\rangle {\rm d}{\vb r'}
+\end{eqnarray}
+From \cite{HANSEN2013ch2} (see Eq~(2.5.11) and the last paragraph on p.40 therein)
+\begin{equation}
+	\left\langle \sum_{j=1}^N \delta(\vb r' - \vb r_j) \right\rangle = \rho^{(1)}(\vb r')
+\end{equation}
+where $\rho^{(1)}(\vb r)$ is the equilibrium singe-particle density.
+
+For homogeneous system (uniform fluid):
+\begin{equation}
+	\rho^{(1)}(\vb r) = \frac{\langle N\rangle}{V}
+\end{equation}
+Thus
+\begin{equation}
+	\langle \hat{\rho}_{\vb k} \rangle = \frac{\langle N\rangle }{V} \int \exp(-{\rm i}\vb k \vb r') {\rm d} \vb r' = \langle N\rangle \delta_{\vb k}.
+\end{equation}
+\begin{equation}
+	\boxed{
+		\mathfrak{M}_1(\vb k) = \langle N\rangle \delta_{\vb k}.
+	}
+\end{equation}
+
+\subsection{$n=2$}
+\begin{equation}
+	\mathfrak{M}_2(\vb k_1, \vb k_2)
+	= \langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle - \langle \hat{\rho}_{\vb k_1} \rangle \langle\hat{\rho}_{\vb k_2} \rangle
+\end{equation}
+\begin{equation}
+	\langle \hat{\rho}_{\vb k} \rangle = \langle N\rangle \delta_{\vb k}.
+\end{equation}
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int 
+	\sum_{i=1}^N \exp(-{\rm i}\vb k_1\vb r_i) \sum_{j=1}^N \exp(-{\rm i}\vb k_2\vb r_j) \exp(-\beta\Psi_N) {\rm d} {\vb r}^N
+\end{eqnarray}
+Let's single out the term with $i=j$:
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& 
+	\Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int 
+	\left[
+	\sum_{i=1}^N \exp(-{\rm i}(\vb k_1 +  \vb k_2)\vb r_i)
+	\right. \nonumber\\
+	&& \left. + \sum_{i=1}^N \exp(-{\rm i}\vb k_1\vb r_i) \sum_{j=1 \atop j\neq i}^N \exp(-{\rm i}\vb k_2\vb r_j) 
+	\right]\exp(-\beta\Psi_N) {\rm d} {\vb r}^N
+\end{eqnarray}
+The first term is $\langle\hat{\rho}_{\vb k_1 + \vb k_2} \rangle$ and thus is equal to $\langle N \rangle\delta_{\vb k_1 + \vb k_2}$.
+Let's rewrite the second term via $\delta$-functions:
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \langle N \rangle\delta_{\vb k_1 + \vb k_2}
+	\nonumber\\
+	&+& \Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int 
+	{\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''} 
+	\sum_{i=1}^N  \sum_{j=1 \atop j\neq i}^N \delta(\vb r'- \vb r_i) \delta(\vb r'' - \vb r_j)
+	\exp(-\beta\Psi_N) {\rm d} {\vb r}^N {\rm d} {\vb r'} {\rm d} {\vb r''}
+	\nonumber\\
+	&=& 
+	\langle N \rangle\delta_{\vb k_1 + \vb k_2} + \iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''}  
+	\left\langle \sum_{i=1}^N  \sum_{j=1 \atop j\neq i}^N \delta(\vb r'- \vb r_i) \delta(\vb r'' - \vb r_j) \right\rangle {\rm d} {\vb r'} {\rm d} {\vb r''}
+\end{eqnarray}
+From \cite{HANSEN2013ch2} (see Eq~(2.5.13) and the last paragraph on p.40 therein) it follows
+\begin{equation}
+	\left\langle \sum_{i=1}^N  \delta(\vb r'- \vb r_i) \sum_{j=1 \atop j\neq i}^N \delta(\vb r'' - \vb r_j) \right\rangle = \rho^{(2)}(\vb r', \vb r'')
+\end{equation}
+where $\rho^{(2)}(\vb r', \vb r'')$ is the equilibrium 2-particle density, or just the pair density
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \langle N \rangle\delta_{\vb k_1 + \vb k_2} + 
+	\iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''}  
+	\rho^{(2)}(\vb r', \vb r'') {\rm d} {\vb r'} {\rm d} {\vb r''}.
+\end{eqnarray}
+Taking into account the definition~(\ref{def:g_n}) of the $n$-particle distribution function $g^{(n)}$, and the relationship between $\rho^{(n)}$ and $g^{(n)}$ for a homogeneous system
+\begin{equation}
+	\rho^{(n)}(\vb r^n) = \rho^n g^{(n)}(\vb r^n)
+\end{equation}
+where $\rho = \langle N \rangle / V$ is the particle density, one arrives at
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \langle N \rangle\delta_{\vb k_1 + \vb k_2} + 
+	\rho^2 \iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''}  
+	g^{(2)}(\vb r', \vb r'') {\rm d} {\vb r'} {\rm d} {\vb r''}.
+\end{eqnarray}
+Here $g^{(2)}(\vb r', \vb r'')$ is called the pair distribution function.
+Taking into account the definition~(\ref{def:pair_corr_func}) for the pair (total) correlation function $h^{(2)}$, one has
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \langle N \rangle\delta_{\vb k_1 + \vb k_2} + 
+	\rho^2 \iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''}  
+	h^{(2)}(\vb r', \vb r'') {\rm d} {\vb r'} {\rm d} {\vb r''}
+	\nonumber\\
+	&+& \frac{\langle N \rangle^2}{V^2}\iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''} {\rm d} {\vb r'} {\rm d} {\vb r''}.
+\end{eqnarray}
+The last term is equal to $\langle N \rangle^2 \delta_{\vb k_1}\delta_{\vb k_2}.$ 
+For isotropic system $h^{(2)}(\vb r', \vb r'') = h^{(2)}(\abs{\vb r' - \vb r''})$, and the second term becomes
+\begin{eqnarray}
+	&\frac{\langle N \rangle^2}{V^2} &\iint {\rm e}^{-{\rm i}\vb k_1\vb r'} {\rm e}^{-{\rm i}\vb k_2\vb r''} {\rm d} {\vb r'} {\rm d} {\vb r''} = 
+	\left| \substack{\text{Change of variables:} \\ \vb r = \vb r' - \vb r''; \quad \vb R = \vb r'' \\
+	\vb r' = \vb R + \vb r; \quad \vb r'' = \vb R \\ {\rm d} \vb r'{\rm d} \vb r'' = {\rm d} \vb r{\rm d} \vb R } 
+	\right| 
+	\nonumber\\
+	&=& \frac{\langle N \rangle^2}{V^2} \int \exp(-{\rm i}(\vb k_1 + \vb k_2)\vb R) {\rm d} \vb R
+	\int \exp(-{\rm i}\vb k_1 \vb r) h^{(2)}(r) {\rm d}\vb r
+	\nonumber\\
+	&=& \frac{\langle N \rangle^2}{V} \hat{h}^{(2)}(\vb k_1) \delta_{\vb{k}_1 + \vb{k}_2} = 
+	\langle N \rangle \rho \hat{h}^{(2)}(\vb k_1) \delta_{\vb{k}_1 + \vb{k}_2}.
+\end{eqnarray}
+One arrives at the final expression for $\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle$:
+\begin{eqnarray}
+	\langle \hat{\rho}_{\vb k_1} \hat{\rho}_{\vb k_2} \rangle &=& \langle N \rangle\delta_{\vb k_1 + \vb k_2} + 
+	\langle N \rangle \rho \hat{h}^{(2)}(\vb k_1) \delta_{\vb{k}_1 + \vb{k}_2}
+	+ \langle N \rangle^2 \delta_{\vb k_1}\delta_{\vb k_2}
+	\nonumber.
+\end{eqnarray}
+And for the cumulant $\mathfrak{M}_2$ the final expression is
+\begin{equation}
+	\boxed{
+		\mathfrak{M}_2(\vb k_1, \vb k_2) = \langle N \rangle \delta_{\vb{k}_1 + \vb{k}_2} (1 + \rho\hat{h}^{(2)}(\vb 	k_1)) 
+	}
+\end{equation}
+
+The quantity $1 + \rho \hat{h}^{(2)}(\vb k)$ is equal to the static structure factor of the uniform fluid (see~\cite{HANSEN2013ch2}, Eq.~(3.6.10)):
+\begin{equation}
+	S(\vb k) = 1 + \hat{h}^{(2)}(\vb k)
+\end{equation}
+\begin{equation}
+	\mathfrak{M}_2(\vb k_1, \vb k_2)  = \langle N \rangle \delta_{\vb{k}_1 + \vb{k}_2} S(\vb k_1).
+\end{equation}
+The structure factor is related to the thermodynamic properties via the following relationship (see Eqs.~(2.6.12), (3.5.14), and~(3.6.11) in~\cite{hansen2013theory}):
+\begin{equation}
+	S(0) = 1 + \rho\hat{h}^{(2)}(0) = \rho \chi_T / \beta = \frac{\langle N^2 \rangle - \langle N \rangle^2}{\langle N \rangle},
+\end{equation}
+where $\chi_T$ is the isothermal compressibility.
+Thus for $\vb k_1 = \vb k_2 = 0$:
+\begin{equation}
+	\boxed{
+		\mathfrak{M}_2(0,0) = \langle N^2 \rangle - \langle N \rangle^2
+	}
+\end{equation}
+
+\section{\label{app:cumulant_calc_k_0}A method of calculation for cumulants at $\vb k_i = 0$}
+It follows from~(\ref{def:cumulant}) and~(\ref{def:jacob_tilde}), that 
+\begin{eqnarray}
+	\mathfrak{M}_n(0, \dotsc, 0) &=& \frac{1}{(-{\rm i}2\pi)^n} \frac{\partial^n \ln \langle\exp(-{\rm i}2\pi \sum_{\vb k} \omega_{\vb k}\hat{\rho}_{\vb k}) \rangle_0}
+	{\partial\omega_0^n} \bigg|_{\omega_{\vb k_i} = 0}
+	\nonumber\\
+	&=& \frac{\partial^n \ln \Xi_0}{\partial(\beta\mu_0)^n} 
+	= \frac{\partial^{n-1}\langle N \rangle_0}{\partial(\beta\mu_0)^{n-1}} 
+	= \frac{\partial^{n-1}\mathfrak{M}_1(0)}{\partial(\beta\mu_0)^{n-1}}
+	\nonumber\\
+	&=& \frac{\partial\mathfrak{M}_{n-1}(0,\dotsc,0)}{\partial(\beta\mu_0)}.
+\end{eqnarray}
+Then from~(\ref{def:average_rs}) one derives
+\begin{equation}
+	\frac{\partial \langle N \rangle_0}{\partial(\beta\mu_0)} = \langle N^2 \rangle_0 - \langle N \rangle_0^2,
+\end{equation}
+\begin{equation}
+	\frac{\partial \langle N^2 \rangle_0}{\partial(\beta\mu_0)} = \langle N^3 \rangle_0 - \langle N^2 \rangle_0\langle N \rangle_0,
+\end{equation}
+\begin{equation}
+	\frac{\partial \langle N^3 \rangle_0}{\partial(\beta\mu_0)} = \langle N^4 \rangle_0 - \langle N^3 \rangle_0\langle N \rangle_0,
+\end{equation}
+and so on, to give in general:
+\begin{equation}
+	\frac{\partial \langle N^n \rangle_0}{\partial(\beta\mu_0)} = \langle N^{n+1} \rangle_0 - \langle N^n \rangle_0\langle N \rangle_0.
+\end{equation}
+Thus the equation for $\mathfrak{M}_2(0,0)$ is obtained immediately
+\begin{eqnarray}
+	\mathfrak{M}_2(0,0) &=& \frac{\partial \langle N \rangle_0}{\partial(\beta\mu_0)} = \langle N^2 \rangle_0 - \langle N \rangle_0^2 
+	\nonumber\\
+	&=& \langle (N - \langle N \rangle_0)^2 \rangle_0. 
+\end{eqnarray}
+Explicit calculation for $\mathfrak{M}_3(0,0,0)$ leads to
+\begin{eqnarray}
+	\mathfrak{M}_3(0,0,0) &=& \frac{\partial}{\partial(\beta\mu_0)}\left(\langle N^2 \rangle_0 - \langle N \rangle_0^2\right) 
+	\nonumber\\
+	&=& \langle N^3 \rangle_0 - \langle N^2 \rangle_0\langle N \rangle_0 - 2\langle N \rangle_0\langle N^2 \rangle_0 + 2\langle N \rangle_0\langle N \rangle_0^2
+	\nonumber\\
+	&=& \langle N^3 \rangle_0 -3 \langle N^2 \rangle_0\langle N \rangle_0 + 2\langle N \rangle_0^3
+	\nonumber\\
+	&=& \langle (N - \langle N \rangle_0)^3 \rangle_0.
+\end{eqnarray}
+And for $\mathfrak{M}_4(0,0,0,0):$
+\begin{eqnarray}
+	\mathfrak{M}_4(0,0,0) &=& \frac{\partial}{\partial(\beta\mu_0)}
+	\left(\langle N^3 \rangle_0 - 3\langle N^2 \rangle_0\langle N \rangle_0 +2 \langle N \rangle_0^3\right) 
+	\nonumber\\
+	&=& \langle N^4 \rangle_0 - \langle N^3 \rangle_0\langle N \rangle_0 
+	- 3\left(\langle N^3 \rangle_0 - \langle N^2 \rangle_0\langle N \rangle_0\right)\langle N \rangle_0
+	\nonumber\\
+	&-&3\langle N^2 \rangle_0 \left(\langle N^2 \rangle_0 - \langle N \rangle_0^2 \right)
+	+ 6\langle N \rangle_0^2 \left(\langle N^2 \rangle_0 - \langle N \rangle_0^2\right)
+	\nonumber\\
+	&=& \langle N^4 \rangle_0 
+	- 4\langle N^3 \rangle_0\langle N \rangle_0 
+	+ 12\langle N^2 \rangle_0\langle N \rangle_0^2 
+	- 3\langle N^2 \rangle_0^2 
+	- 6\langle N \rangle_0^4
+	\nonumber\\
+	&=& \langle (N - \langle N \rangle_0)^4 \rangle_0 - 3 \langle (N - \langle N \rangle_0)^2 \rangle_0^2.
+\end{eqnarray}

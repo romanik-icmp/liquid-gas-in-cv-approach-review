@@ -1,0 +1,32 @@
+\section{Effective Hamiltonian in the mean-field approximation}
+Consider the long-wave contribution $\Xi_L$ to the GPF, Eq.~(\ref{Xi_L}). Let's calculate $\Xi_L$ in the approximation when all $\vb k_i=0$
+\begin{equation}
+	\Xi_L^{(1)} = \int \exp(\mu^*\rho_0 -\frac{d(0)}{2} \rho_0^2 - \frac{a_4}{4!N_B} \rho_0^4) {\rm d} \rho_0.
+\end{equation}
+Since, as previously learned, $d(0) \propto \langle N \rangle_0$ and $a_4 \propto \langle N \rangle_0^2$, it is convenient to perform the following substitution of variables $\rho = \langle N \rangle_0 \rho_0'$ in the the above expression and obtain
+\begin{equation}
+	\Xi_L^{(1)} = \langle N \rangle_0 \int \exp[\langle N \rangle_0 E(\rho'_0)] {\rm d} \rho'_0
+\end{equation}
+where the following notations were introduced
+\begin{equation}
+	E(\rho'_0) = \mu^*\rho_0' - \frac{d'(0)}{2} {\rho'}_0^2 - \frac{a'_4}{4!}{\rho'}_0^4,
+\end{equation}
+\begin{equation}
+	d'(0) = \langle N \rangle_0 d(0), \quad a'_4 = \frac{\langle N \rangle_0}{N_B} \langle N \rangle_0^2 a_4.
+\end{equation}
+The presence of $\langle N \rangle_0$ in the exponent justifies the application of the steepest-descent method for integration. The result is the following
+\begin{equation}
+	\Xi_L^{(1)} = \langle N \rangle_0 \exp(\langle N \rangle_0 E(\rho_{0,{\rm max}}))
+\end{equation}
+where $\rho_{0,{\rm max}}$ maximizes the quantity $E(\rho'_0)$ and is found from the following conditions
+\begin{equation}
+	\frac{\partial E}{\partial \rho'_0} = 0; \quad \frac{\partial^2 E}{\partial {\rho'}_0^2} < 0.
+\end{equation}
+In explicit form these conditions become
+\begin{equation}
+	\mu^*-d'(0)\rho_0 - \frac{a'_4}{3!}{\rho'}_0^3 = 0,
+\end{equation}
+\begin{equation}
+	-d'(0) - \frac{a'_4}{2}{\rho'}_0^2 < 0.
+\end{equation}
+

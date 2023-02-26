@@ -1,0 +1,279 @@
+\section{\label{sec:problem_statement} Problem statement}
+
+Consider a classical system of identical particles interacting via a pairwise additive potential $U(\abs{\vb r})$, where $\vb r$ is the distance in the three-dimensional space. There are two assumptions made regarding the interaction between particles. First, the interaction can be decomposed into two parts
+\begin{equation}
+	\label{interaction_decomp}
+	U(r_{ij}) = \Psi(r_{ij}) + \Phi(r_{ij}),
+\end{equation}
+where $\Psi(r_{ij})$ is responsible for the repulsion between particles - denoted by $i$ and $j$ -  at short distances, and $\Phi(r_{ij})$ for the attraction at long distances, $r_{ij} \equiv \abs{\vb r_i - \vb r_j}$. Second, that the attraction part of the potential possesses a well-behaved Fourier transform. For more details on the interaction potential, see Section~\ref{sec:potential}.
+
+A physical observable dependent on the particle coordinates is, in general, a functional of the microscopic particle density defined as 
+\begin{equation}
+	n(\vb r) = \sum_{j=1}^{N} \delta(\vb r - \vb r_j),
+\end{equation}
+where $\vb r_j$ is the coordinate of the $j$-th particle, $N$ is the number of particles in the system, $\delta(...)$ is the Dirac's $\delta$-function. Imposing boundary periodic conditions, one can represent $n(\vb r)$ in the form of a Fourier series, see Appendix~\ref{sec:fourier}:
+\begin{equation}
+	n(\vb r) = \frac{1}{V} \sum_{\vb k} \hat{\rho}_{\vb k} e^{i\vb k \vb r},
+\end{equation}
+where $\sum_{\vb k} = \sum_{k_x}\sum_{k_y}\sum_{k_z}$, $k_i = \frac{2\pi}{V^{1/3}}n_i$, $i=x,y,z$, $n_i=0,\pm 1, \pm 2, \dotsc$. $V$ is the periodicity volume for system's properties, so that
+$$ \int_V n(\vb r) d\vb r = N.$$
+The Fourier component $\hat{\rho}_{\vb k}$ is of the form:
+\begin{equation}
+	\label{def:rho_k}
+	\hat{\rho}_{\vb k} = \sum_{j=1}^N\exp(-i\vb k \vb r_j), \quad \hat{\rho}_{\vb k = 0} = N. 
+\end{equation}
+Alternatively, 
+\begin{eqnarray}
+	\label{rho_k_sin}
+	& \hat{\rho}_{\vb k} = \hat{\rho}_{\vb k}^c - {\rm i}\hat{\rho}_{\vb k}^s.
+	\nonumber\\
+	& \hat{\rho}_{\vb k}^c = \sum_{i=1}^N \cos(\vb k \vb r_i), \quad \hat{\rho}_{\vb k}^s = \sum_{i=1}^N \sin(\vb k \vb r_i)
+\end{eqnarray}
+
+
+Let the system be open. The probability that an open system contains exactly $N$ particles is given by (see e.g. Eq.~(2.4.12) in \cite{HANSEN2013ch2}):
+\begin{equation}
+p(N)=\frac{1}{\Xi}\frac{z^N}{N!}Z_N.
+\end{equation}
+Here $\Xi$ is the grand partition function (GPF) of the system:
+\begin{equation}
+\Xi=\sum_{N=0}^{\infty}\frac{z^N}{N!}Z_N.
+\end{equation}
+where $z$ is the activity:
+\begin{equation}
+	z = \frac{\exp(\beta\mu)}{\Lambda^3}
+\end{equation}
+with $\beta$ being the inverse temperature, and $\mu$ the chemical potential, $\Lambda = (2\pi\beta\hbar^2/m)^{1/2}$ the de Broglie thermal wavelength, $\hbar$ the Planck's constant, $m$ the mass of a particle.
+
+$Z_N$ is the configuration integral:
+\begin{equation}
+	Z_N = \int\exp(-\beta U_N(\vb {r}_1,...,\vb{r}_N)){\rm d}\vb{r}^N
+\end{equation}
+where $U_N$ is the potential energy of interparticle interaction, and the following notation is understood ${\rm d} \vb{r}^N \equiv {\rm d}{\vb r_1} \dotsc {\rm d}{\vb r_N}$.
+
+Given the GPF, all the thermodynamic properties of the system can be obtained.
+
+%\section{\label{sec:potential} Interaction potential}
+\subsection{\label{sec:potential} Potential energy of interparticle interaction}
+
+Based on the assumption made in~(\ref{interaction_decomp}), the potential energy of the interparticle interaction can be written in the form:
+\begin{eqnarray}
+	U_N(\vb r^N) &=& \Psi_N(\vb r^N) + \Phi_N (\vb r^N) 
+	\nonumber\\
+	&=&\frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Psi(r_{ij}) 
+	+ \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Phi(r_{ij})	
+\end{eqnarray}
+where the following notation is introduced $\vb r^N \equiv \vb r_1, \dotsc, \vb r_N$.
+Here 
+\begin{equation}
+	\Psi_N = \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Psi(r_{ij})
+\end{equation}
+is the potential energy of the short-range repulsive interaction, and
+\begin{equation}
+	\Phi_N = \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Phi(r_{ij})
+\end{equation}
+is the long-range attractive counterpart.
+
+One approach to separation the long- and short-range interaction is to choose $\Psi(r)$ as the hard-sphere (HS) potential
+\begin{equation}
+	\Psi(r) = 
+	\left\{
+	\begin{array}{cc}
+		\infty, \quad r\leq \sigma, \\
+		0, \quad r > \sigma
+	\end{array}
+	\right.
+\end{equation}
+where $\sigma$ denotes the hard-sphere diameter.
+
+Then $\Phi(r)$ can be chosen so that it possesses a potential well at $r > \sigma$, e.g.
+\begin{equation}
+	\label{short-range-potential}
+	\Phi(r) = \left\{
+	\begin{array}{cc}
+		0, \quad r \leq \sigma \\
+		U_{Morse}(r), \quad r > \sigma,
+	\end{array}
+	\right.
+\end{equation}
+using the Morse potential
+\begin{equation}
+	U_{Morse}(r) = \varepsilon \{\exp{[-2(r-R_0)/\alpha]}-2\exp{[-(r-R_0)/\alpha]}\}
+\end{equation}
+with $\varepsilon$ being the characteristic energy of the potential, $R_0$ the coordinate ot the minimum, and $\alpha$ the effective range of action.
+In what follows, we develop a general approach to deal with the system of interacting particles, and particular form of the reference system and attractive part of the potential will be chosen at the end to obtain some numerical and graphical results.
+
+In general we assume that the attractive part of the interaction potential possesses a well behaved Fourier component $\hat{\Phi}_{\vb k}$ such that:
+\begin{equation}
+	\Phi(r) = \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r} = \frac{1}{(2\pi)^3} \int {\rm d} {\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k \vb r},
+\end{equation}
+and
+\begin{equation}
+	\hat{\Phi}_{\vb k} = \int \Phi(r) {\rm e}^{-i\vb k \vb r} {\rm d} {\vb r}.
+\end{equation}
+In such a case, the potential energy of the attractive interaction can be written in terms of $\hat{\rho_{\vb k}}$:
+\begin{eqnarray}
+	\Phi_N(\vb r^N) &=& \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \Phi(r_{ij})
+	\nonumber\\
+	&=& \frac12 \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} \frac{1}{V} \sum_{\vb k} \hat{\Phi}_{\vb k} {\rm e}^{i\vb k (\vb r_i - \vb r_j)}
+	\nonumber\\
+	&=& \frac{1}{2V} \sum_{\vb k} \hat{\Phi}_{\vb k} \underset{i\neq j}{\sum_{i=1}^N \sum_{j=1}^N} {\rm e}^{-i\vb k \vb r_i} {\rm e}^{i\vb k\vb r_j}
+	\nonumber\\
+	&=& \frac{1}{2V} \sum_{\vb k} \hat{\Phi}_{\vb k} 
+	\left( \sum_{i=1}^N {\rm e}^{-i\vb k\vb r_i} \sum_{j=1}^N {\rm e}^{i\vb k \vb r_j} - \sum_{j=1}^N 1
+	\right)
+	\nonumber\\
+	&=&\frac{1}{2V} \sum_{\vb k} \hat{\Phi}_{\vb k} \left(\hat{\rho}_{\vb k} \hat{\rho}_{-\vb k} - N\right)
+	\nonumber\\
+	&=& \frac{1}{2V} \sum_{\vb k} \hat{\Phi}_{\vb k} \hat{\rho}_{\vb k} \hat{\rho}_{-\vb k} - \frac{N}{2V}\sum_{\vb k} \hat{\Phi}_{\vb k}.
+\end{eqnarray}
+
+Note, that in our approach we put $\Phi(0) = 0$, see~(\ref{short-range-potential}), thus $$\frac{1}{V}\sum_{\vb k} \hat{\Phi}_{\vb k}{\rm e}^{i\vb k \vb r}|_{\vb r=0} = \frac{1}{V}\sum_{\vb k} \hat{\Phi}_{\vb k} \equiv \Phi(0) = 0$$
+and the second term for $\Phi_N$ vanishes
+\begin{equation}
+	\label{phi_N_via_rho}
+	\Phi_N(\vb r^N) = \frac{1}{2V} \sum_{\vb k} \hat{\Phi}_{\vb k} \hat{\rho}_{\vb k} \hat{\rho}_{-\vb k}.
+\end{equation}
+
+\subsection{The Grand Partition Function with a reference system singled out}
+
+The GPF is now written as
+\begin{equation}
+	\Xi = \sum_{N=0}^{\infty}\frac{{\rm e}^{\beta\mu N}}{N!\Lambda^{3N}} \int \exp(-\beta\Psi_N(\vb r^N) - \beta\Phi_N(\vb r^N)) {\rm d} {\vb r}^N.
+\end{equation}
+Let's consider a system characterized only by the repulsive part of the interaction potential as a reference system (RS). The GPF for the RS system is
+\begin{equation}
+	\label{def:GPF_0}
+	\Xi_0 = \sum_{N=0}^{\infty} \frac{1}{N!} \frac{\exp(\beta\mu_0 N)}{\Lambda^{3N}} \int \exp(-\beta\Psi_N(\vb r^N)) {\rm d} {\vb r}^N
+\end{equation}
+where $\mu_0$ is the RS chemical potential.
+Now, the GPF is expressed as
+\begin{equation}
+	\Xi = \Xi_0 \sum_{N=0}^{\infty} \frac{\exp(\beta\mu_0 N)}{N! \Lambda^{3N}} \int \frac{\exp(-\beta \Phi_N (\vb r^N))}{\Xi_0} \exp(\beta(\mu - \mu_0)N - \beta\Phi_N(\vb r^N)) {\rm d} {\vb r^N}.
+\end{equation}
+Taking into account~(\ref{phi_N_via_rho}) and~(\ref{def:rho_k}), the second exponent under the integral can be expressed in terms of $\hat{\rho}_{\vb k}$:
+\begin{equation}
+	\label{exp_attr}
+	\exp(\beta(\mu - \mu_0)N - \beta\Phi_N(\vb r^N)) = \exp(h\hat{\rho}_0 - \frac{1}{2} \sum_{\vb k} \alpha(k) \hat{\rho}_{\vb k} \hat{\rho}_{-\vb k} ).
+\end{equation}
+Here the following notations were introduced:
+\begin{equation}
+	\label{def:h}
+	h = \beta (\mu - \mu_0); \quad \alpha(k) = \frac{\beta\hat{\Phi}_{\vb k}}{V}.
+\end{equation}
+
+Let's define the set of collective variables $\rho_{\vb k} = \rho_{\vb k}^c - {\rm i} \rho_{\vb k}^s$ via the following expressions:
+\begin{eqnarray}
+	\label{def:col_var}
+	\hat{\rho}_{\vb k}^c &=& \int\rho_{\vb k}^c J(\rho - \hat{\rho}) ({\rm d}\rho),
+	\nonumber\\
+	\hat{\rho}_{\vb k}^s &=& \int\rho_{\vb k}^s J(\rho - \hat{\rho}) ({\rm d}\rho),
+	\nonumber\\
+	\hat{\rho}_0 &=&  \int\rho_0 J(\rho - \hat{\rho}) ({\rm d}\rho) = N.
+\end{eqnarray}
+Here
+\begin{equation}
+	J(\rho - \hat{\rho}) = \delta(\rho_0 - \hat{\rho}_0) \prod_{\vb k}' \delta(\rho_{\vb k}^c - \hat{\rho}_{\vb k}^c) \delta(\rho_{\vb k}^s - \hat{\rho}_{\vb k}^s),
+\end{equation}
+\begin{equation}
+	({\rm d} \rho) = {\rm d}\rho_0 \prod_{\vb k}' {\rm d}\rho_{\vb k}^c {\rm d}\rho_{\vb k}^s.
+\end{equation}
+The 'prime' sign over the product means that the wave-vector takes on values only from the upper semi-space of the reciprocal space, i.e. $k_z>0,$ and $\vb k \neq 0.$
+
+The collective variables $\rho_{\vb k}$ possess the following properties:
+\begin{equation}
+	\rho_{-\vb k} = \rho_{\vb k}^*; \quad \rho_{\vb k}^c = \rho_{-\vb k}^c; \quad \rho_{\vb k}^s = -\rho_{-\vb k}^s.
+\end{equation}
+
+Equations~(\ref{def:col_var}) can be written in a more concise form
+\begin{equation}
+	\hat{\rho}_{\vb k} = \int\rho_{\vb k} J(\rho - \hat{\rho}) ({\rm d}\rho).
+\end{equation}
+Valid is also a more general equality
+\begin{equation}
+	f(\hat{\rho}_{\vb k}) = \int f(\rho_{\vb k}) J(\rho - \hat{\rho}) ({\rm d}\rho),
+\end{equation}
+where $f$ is some function of $\hat{\rho}_{\vb k}.$ Applied to~(\ref{exp_attr}), it leads
+\begin{eqnarray}
+	\label{exp_attr2}
+	\exp(\beta(\mu - \mu_0)N - \beta\Phi_N(\vb r^N)) &=& \exp(h\hat{\rho}_0 - \frac{1}{2} \sum_{\vb k} \alpha(k) \hat{\rho}_{\vb k} \hat{\rho}_{-\vb k} )
+	\nonumber\\
+	&=& \int \exp(h\rho_0 - \frac{1}{2} \sum_{\vb k} \alpha(k) \rho_{\vb k} \rho_{-\vb k}) J(\rho_{\vb k} - \hat{\rho}_{\vb k}) ({\rm d} \rho).
+\end{eqnarray}
+And for the GPF one has:
+\begin{equation}
+	\Xi = \Xi_0 \int \exp(h\rho_0 - \frac12\sum_{\vb k}\alpha(k) \rho_{\vb k} \rho_{-\vb k}) \mathfrak{J}(\rho) ({\rm d} \rho)
+\end{equation}
+where the Jacobian function is defined as
+\begin{eqnarray}
+	\label{def:jacobian}
+	\mathfrak{J}(\rho) &=& \frac{1}{\Xi_0}\sum_{N=0}^{\infty} \frac{z_0^N}{N!}\int \exp(-\beta\Psi_N(\vb r^N)) J(\rho - \hat{\rho}) {\rm d}{\vb r^N}
+	\nonumber\\
+	&=& \langle J(\rho - \hat{\rho}) \rangle_{RS}.
+\end{eqnarray}
+Here $z_0=\exp(\beta\mu_0/\Lambda^3)$ is the activity of the reference system, and the average value over the reference system is defined as
+\begin{equation}
+	\label{def:average_rs}
+	\langle \dotsc \rangle_{RS} = \Xi_0^{-1} \sum_{N=0}^{\infty} \frac{z_0^N}{N!} \int \exp(-\beta\Psi_N(\vb r^N)) \dotsc {\rm d} {\vb r}^N.
+\end{equation}
+
+\section{\label{sec:jacobian} The Jacobian of transformation}
+
+Let's rewrite the expression for the Jacobian~(\ref{def:jacobian}) using the integral representation for $\delta$-functions:
+\begin{equation}
+	\delta(\rho_0 - \hat{\rho}_0) \prod_{\vb k}' \delta(\rho_{\vb k}^c - \hat{\rho}_{\vb k}^c) \delta(\rho_{\vb k}^s - \hat{\rho}_{\vb k}^s) = \int \exp(2\pi{\rm i}\sum_{\vb k} (\rho_{\vb k} - \hat{\rho}_{\vb k}) \omega_{\bf k}) ({\rm d} \omega),
+\end{equation}
+where $\omega_{\vb k}$ is a variable conjugate to $\rho_{\vb k}$
+\begin{equation}
+	\omega_{\vb k} = \frac12(\omega_{\vb k}^c + {\rm i} \omega_{\vb k}^s),
+\end{equation}
+\begin{equation}
+	({\rm d}\omega) = {\rm d} \omega_0 \prod_{\vb k}' {\rm d} \omega_{\vb k}^c {\rm d} \omega_{\vb k}^s.
+\end{equation}
+The Jacobian can now be expressed as
+\begin{eqnarray}
+	\mathfrak{J}(\rho) &=& \frac{1}{\Xi_0}\sum_{N=0}^{\infty} \frac{z_0^N}{N!}\int \exp(-\beta\Psi_N(\vb r^N) + {\rm i}2\pi \sum_{\vb k}(\rho_{\vb k} - \hat{\rho}_{\vb k})\omega_{\vb k}) ({\rm d} \omega) {\rm d}{\vb r^N}.
+	\nonumber\\
+	&=& \int \exp({\rm i} 2\pi \sum_{\vb k}\rho_{\vb k}\omega_{\vb k}) \tilde{\mathfrak{J}}(\omega) ({\rm d} \omega)
+\end{eqnarray}
+where the following notation is introduced
+\begin{equation}
+	\label{def:jacob_tilde}
+	\tilde{\mathfrak{J}}(\omega) = \frac{1}{\Xi_0}\sum_{N=0}^{\infty} \frac{z_0^N}{N!}\int \exp(-\beta\Psi_N(\vb r^N) - {\rm i}2\pi \sum_{\vb k} \omega_{\vb k}\hat{\rho}_{\vb k}) {\rm d}{\vb r^N}.
+\end{equation}
+The expression for $\tilde{\mathfrak{J}}(\omega)$ can be expanded into a cumulant series to give
+\begin{equation}
+	\tilde{\mathfrak{J}}(\omega) = \exp(\sum_{n\geq 1} D_n(\omega))
+\end{equation}
+where 
+\begin{equation}
+	D_n(\omega) = \frac{(-{\rm i}2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n}\mathfrak{M}_n(\vb k_1, \dotsc, \vb k_n) \omega_{{\vb k}_1}\dotsc \omega_{{\vb k}_n}.
+\end{equation}
+The cumulants $\mathfrak{M}_n$ are calculated by the following formula:
+\begin{equation}
+	\label{def:cumulant}
+	\mathfrak{M}_n(\vb k_1, \dotsc, \vb k_n) = \frac{1}{(-{\rm i}2\pi)^n} 
+	\left(
+	\frac{\partial^n \ln \tilde{\mathfrak{J}}(\omega)}{\partial\omega_{{\vb k}_1} \dotsc \partial\omega_{{\vb k}_n}}
+	\right)_{\omega_{{\vb k}_i}=0}
+\end{equation}
+The calculation of the cumulants $\mathfrak{M}_n$ is the objective of the next Section~\ref{sec:cumulants}.
+
+The Jacobian $\mathfrak{J}(\rho)$ is now expressed as
+\begin{eqnarray}
+	\mathfrak{J}(\rho) &=& \int \exp({\rm i} 2\pi \sum_{\vb k}\rho_{\vb k}\omega_{\vb k} + \sum_{n\geq 1} D_n(\omega) ) ({\rm d} \omega)
+	\nonumber\\
+	&=& \int \exp({\rm i} 2\pi \sum_{\vb k}\rho_{\vb k}\omega_{\vb k} 
+	+ \sum_{n\geq 1} \frac{(-{\rm i}2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n}\mathfrak{M}_n(\vb k_1, \dotsc, \vb k_n) \omega_{{\vb k}_1}\dotsc \omega_{{\vb k}_n}) ({\rm d} \omega)
+\end{eqnarray}
+
+The partition function is now written as
+\begin{eqnarray}
+	\Xi &=& \Xi_0 \int \exp \left[h \rho_0 - \frac12
+	\sum\limits_{\bf k} \alpha(\vb k) \rho_{\bf k}\rho_{-{\bf k}} \right]
+	\\
+	&&
+	\quad \times
+	\exp (i2\pi \sum\limits_{\bf k} \omega_{\bf k} \rho_{\bf k} + \sum_{n\ge 1} \frac{(-i2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n} {\mathfrak M}_n(\vb{k}_1,\dotsc,\vb{k}_n) \omega_{\vb k_1}\dotsc\omega_{\vb{k}_n})
+	(d\omega) (d\rho) \nonumber
+\end{eqnarray}

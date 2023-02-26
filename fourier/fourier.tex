@@ -1,0 +1,62 @@
+\section{\label{sec:fourier} Fourier transformation}
+In this work, the following form of Fourier transformation is used.
+
+Let $f(\vb r)$ be a function of the distance $\vb r$. Then it is expanded in the Fourier series as:
+\begin{equation}
+	f(\vb r) = \frac{1}{V} \sum_{\vb k} \hat{f}_{\vb k} e^{i\vb k \vb r}
+\end{equation}
+where $\sum_{\vb k} = \sum_{k_x}\sum_{k_y}\sum_{k_z}$, $k_i = \frac{2\pi}{V^{1/3}}n_i$, $i=x,y,z$, $n_i=0,\pm 1, \pm 2, \dotsc$. $V$ is the volume of periodicity.
+
+The expression for the Fourier component $\hat{f}_{\vb k}$ is
+\begin{equation}
+	\hat{f}_{\vb k} = \int_V f(\vb r) e^{-i\vb k \vb r} d{\vb r}.
+\end{equation}
+
+Note, that here we agree upon the convention that the $'+'$ sign is taken in the exponent when $f(\vb r)$ is expressed via $\hat{f}_{\vb k}$, and the $'-'$ sign when $\hat{f}_{k}$ is expressed via $f(\vb r)$.
+
+\subsection*{Expression of $\delta$-function}
+
+I.
+\begin{equation}
+	\delta(\vb r - \vb r') = \frac{1}{(2\pi)^3}\int d {\vb k} e^{i\vb k (\vb r - \vb r')} = \frac{1}{V} \sum_{\vb k} e^{i\vb k(\vb r - \vb r')}.
+\end{equation}
+
+\begin{equation}
+	\int f(\vb r) \delta(\vb r - \vb r') d {\vb r} = f(\vb r').
+\end{equation}
+
+II.
+\begin{equation}
+	\delta(\vb k - \vb k') = \frac{1}{(2\pi)^3} \int d{\vb r} e^{i\vb r (\vb k - \vb k')}
+\end{equation}
+
+\begin{equation}
+	\int d{\vb k} \hat{f}_{\vb k} \delta(\vb k - \vb k') = \frac{(2\pi)^3}{V} \sum_{\vb k} \hat{f}_{\vb k} \delta(\vb k - \vb k') = \hat{f}_{\vb k'}.
+\end{equation}
+
+Relations between integration and summation over $\vb k$ is given by
+\begin{equation}
+	\frac{1}{V}\sum_{\vb k} (...) = \frac{1}{(2\pi)^3}\int d{\vb k} (...)
+\end{equation}
+
+\subsection*{Kronecker's $\delta$-symbol}
+
+\begin{equation}
+	\delta_{\vb k} = \frac{1}{V} \int e^{-i\vb k \vb r} d{\vb r} = 
+	\left\{
+	\begin{array}{cc}
+		0, \quad \vb k \neq 0, \\
+		1, \quad \vb k = 0.
+	\end{array}
+	\right.
+\end{equation}
+
+\begin{equation}
+	\delta_{\vb k, \vb k'} = \frac{1}{V} \int e^{-i(\vb k - \vb k') \vb r} d{\vb r} = 
+	\left\{
+	\begin{array}{cc}
+		0, \quad \vb k \neq \vb k', \\
+		1, \quad \vb k = \vb k'.
+	\end{array}
+	\right.
+\end{equation}
