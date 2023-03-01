@@ -12,7 +12,10 @@ where the following notations were introduced
 	E(\rho'_0) = \mu^*\rho_0' - \frac{d'(0)}{2} {\rho'}_0^2 - \frac{a'_4}{4!}{\rho'}_0^4,
 \end{equation}
 \begin{equation}
-	d'(0) = \langle N \rangle_0 d(0), \quad a'_4 = \frac{\langle N \rangle_0}{N_B} \langle N \rangle_0^2 a_4.
+	d'(0) = \langle N \rangle_0 d(0) = a'_2 + \frac{6}{\pi}\eta \frac{\varepsilon}{k_BT} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}.
+\end{equation}
+\begin{equation}
+	a'_2 = \langle N \rangle_0 a_2, \quad a'_4 = \frac{\langle N \rangle_0}{N_B} \langle N \rangle_0^2 a_4
 \end{equation}
 The presence of $\langle N \rangle_0$ in the exponent justifies the application of the steepest-descent method for integration. The result is the following
 \begin{equation}
@@ -30,3 +33,60 @@ In explicit form these conditions become
 	-d'(0) - \frac{a'_4}{2}{\rho'}_0^2 < 0.
 \end{equation}
 
+\subsection{Naive approximation}
+In a the most simple approximation, the quantity $\mu^*$ plays the same role as an external magnetic field in the Ising model. For Ising model it is known that the critical point appears at the absense of the external field, thus to find the critical point in our approximation, one condition is 
+$$\mu^*=0.$$ 
+The quantity $\mu^*$ depends on the chemical potential, through the term $\beta(\mu - \mu_0)$, on the temperature, through the term proportional to $\alpha(0)$, and on the packing fraction $\eta.$
+If we assume that $\mu = \mu_0$, then the condition $\mu^*=0$ will relate the temperature and $\eta$
+$$
+{\frak M_3}/{\frak M_4} + \alpha(0)\tilde{\frak M}_1 = 0.
+$$
+
+
+This is the first condition that relates these two quantities.
+The second condition is obtained from the requirement that non-zero solution exists for $\rho'_0$:
+$$ {\rho'}^3_0 + \frac{3!d'(0)}{a'_4}{\rho'}_0 = 0 $$
+
+$$
+\rho_{01} = 0;
+$$ 
+
+$$
+\rho_{02,03} = \pm\sqrt{-\frac{3!d'(0)}{a'_4}}
+$$
+
+Since $a'_4$ is always positive in the region $0.04 \leq \eta \leq 0.22$, the solutions $\rho_{02}$ and $\rho_{03}$ are real when $d'(0) \leq 0$. Thus the second condition for the critical point is 
+$$
+d'(0) = 0
+$$
+
+Thus in explicit form the system of two equations relating the temperature and packing fraction is as follows
+\begin{eqnarray}
+	&&\frac{\mathfrak{m}_3}{\mathfrak{m}_4} + \frac{6\eta}{\pi} \frac{1}{T^*} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}
+	\left(1 - \frac{\mathfrak{m}_2\mathfrak{m}_3}{\mathfrak{m}_4} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2} \right) = 0;
+	\nonumber\\
+	&& a'_2 + \frac{6\eta}{\pi} \frac{1}{T^*} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} = 0,
+\end{eqnarray}
+where $T^* = k_BT/\varepsilon$ is the reduced temperature.
+The equation for finding the critical value of $\eta$ is 
+\begin{equation}
+	\frac{\mathfrak{m}_3}{\mathfrak{m}_4} - a'_2
+	\left(1 - \frac{\mathfrak{m}_2\mathfrak{m}_3}{\mathfrak{m}_4} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2} \right) = 0
+\end{equation}
+which in the Percus-Yevick approximation gives the following numerical solution
+$$
+\eta_c = 0.1742,
+$$
+or the critical value for the reduced density $\rho^* = \sigma^3\langle N \rangle / V$
+$$
+\rho^*_c = 0.3327.
+$$
+The critical temperature is now found
+$$
+T^*_c = -\frac{6\eta_c}{\pi a'_2} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}
+$$
+which for the parameters value $R_0/\alpha = 3.5$ is
+$$
+T^*_c = 2.14.
+$$
+It is very important to note that both critical density and critical temperature depend on the parameters of the attractive part of potential.
