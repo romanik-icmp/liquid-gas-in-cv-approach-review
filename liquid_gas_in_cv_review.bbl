@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{14}%
+\begin{thebibliography}{23}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -64,6 +64,15 @@
   \bibnamefont {McDonald}}}\ (\bibinfo  {publisher} {Academic Press},\ \bibinfo
   {address} {Oxford},\ \bibinfo {year} {2013})\ \bibinfo {edition} {fourth
   edition}\ ed.,\ pp.\ \bibinfo {pages} {13--59}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stuart}\ and\ \citenamefont
+  {Ord}(2010)}]{stuart2010kendall}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Stuart}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Ord}},\
+  }\href {https://books.google.com.ua/books?id=b1yYEAAAQBAJ} {\emph {\bibinfo
+  {title} {Kendall's Advanced Theory of Statistics, Distribution Theory}}},\
+  Kendall's Advanced Theory of Statistics\ (\bibinfo  {publisher} {Wiley},\
+  \bibinfo {year} {2010})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hansen}\ and\ \citenamefont
   {McDonald}(2013{\natexlab{b}})}]{HANSEN2013ch3}%
   \BibitemOpen
@@ -134,6 +143,26 @@
   {journal} {\bibinfo  {journal} {Physica A: Statistical Mechanics and its
   Applications}\ }\textbf {\bibinfo {volume} {168}},\ \bibinfo {pages} {999}
   (\bibinfo {year} {1990})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cameron}(1994)}]{cameron1995comb}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~J.}\ \bibnamefont
+  {Cameron}},\ }\href
+  {https://www.amazon.com/Combinatorics-Techniques-Algorithms-Peter-Cameron/dp/0521457610}
+  {\emph {\bibinfo {title} {Combinatorics: Topics, Techniques, Algorithms}}},\
+  \bibinfo {edition} {1st}\ ed.\ (\bibinfo  {publisher} {Cambridge University
+  Press},\ \bibinfo {year} {1994})\BibitemShut {NoStop}%
+\bibitem [{wik({\natexlab{a}})}]{wikiBellNum}%
+  \BibitemOpen
+  \href@noop {} {}\bibinfo {howpublished}
+  {\url{https://en.wikipedia.org/wiki/Bell\_number}}
+  ({\natexlab{a}})\BibitemShut {NoStop}%
+\bibitem [{wik({\natexlab{b}})}]{wikiStirlingNum2}%
+  \BibitemOpen
+  \href
+  {https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind}
+  {}\bibinfo {howpublished}
+  {\url{https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind}}
+  ({\natexlab{b}})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ashcroft}\ and\ \citenamefont
   {Lekner}(1966)}]{Ashcroft1966}%
   \BibitemOpen
@@ -153,6 +182,17 @@
   {journal} {Proceedings of the Physical Society}\ }\textbf {\bibinfo {volume}
   {88}},\ \bibinfo {pages} {149} (\bibinfo {year} {1966})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Carnahan}\ and\ \citenamefont
+  {Starling}(1969)}]{CarnahanStarling1969}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~F.}\ \bibnamefont
+  {Carnahan}}\ and\ \bibinfo {author} {\bibfnamefont {K.~E.}\ \bibnamefont
+  {Starling}},\ }\bibfield  {title} {\bibinfo {title} {Equation of state for
+  nonattracting rigid spheres},\ }\href {https://doi.org/10.1063/1.1672048}
+  {\bibfield  {journal} {\bibinfo  {journal} {The Journal of Chemical Physics}\
+  }\textbf {\bibinfo {volume} {51}},\ \bibinfo {pages} {635} (\bibinfo {year}
+  {1969})},\ \Eprint {https://arxiv.org/abs/https://doi.org/10.1063/1.1672048}
+  {https://doi.org/10.1063/1.1672048} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Yukhnovskii}\ \emph {et~al.}(2013)\citenamefont
   {Yukhnovskii}, \citenamefont {Kolomiets},\ and\ \citenamefont
   {Idzyk}}]{Yukh2013}%
@@ -165,6 +205,46 @@
   {https://doi.org/10.5488/cmp.16.23604} {\bibfield  {journal} {\bibinfo
   {journal} {Condensed Matter Physics}\ }\textbf {\bibinfo {volume} {16}},\
   \bibinfo {pages} {23604} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wertheim}(1963)}]{WertheimPRL1963}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~S.}\ \bibnamefont
+  {Wertheim}},\ }\bibfield  {title} {\bibinfo {title} {Exact solution of the
+  percus-yevick integral equation for hard spheres},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.10.321} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {10}},\ \bibinfo
+  {pages} {321} (\bibinfo {year} {1963})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Thiele}(1963)}]{ThieleJCP1963}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Thiele}},\ }\bibfield  {title} {\bibinfo {title} {{Equation of State for
+  Hard Spheres}},\ }\href {https://doi.org/10.1063/1.1734272} {\bibfield
+  {journal} {\bibinfo  {journal} {The Journal of Chemical Physics}\ }\textbf
+  {\bibinfo {volume} {39}},\ \bibinfo {pages} {474} (\bibinfo {year} {1963})},\
+  \Eprint
+  {https://arxiv.org/abs/https://pubs.aip.org/aip/jcp/article-pdf/39/2/474/8127455/474\_1\_online.pdf}
+  {https://pubs.aip.org/aip/jcp/article-pdf/39/2/474/8127455/474\_1\_online.pdf}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ree}\ and\ \citenamefont
+  {Hoover}(1964)}]{ReeHooverJCP1964}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.~H.}\ \bibnamefont
+  {Ree}}\ and\ \bibinfo {author} {\bibfnamefont {W.~G.}\ \bibnamefont
+  {Hoover}},\ }\bibfield  {title} {\bibinfo {title} {Fifth and sixth virial
+  coefficients for hard spheres and hard disks},\ }\href
+  {https://doi.org/10.1063/1.1725286} {\bibfield  {journal} {\bibinfo
+  {journal} {The Journal of Chemical Physics}\ }\textbf {\bibinfo {volume}
+  {40}},\ \bibinfo {pages} {939} (\bibinfo {year} {1964})},\ \Eprint
+  {https://arxiv.org/abs/https://pubs.aip.org/aip/jcp/article-pdf/40/4/939/11304265/939\_1\_online.pdf}
+  {https://pubs.aip.org/aip/jcp/article-pdf/40/4/939/11304265/939\_1\_online.pdf}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yukhnovskii}(2014)}]{Yukh2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.~R.}\ \bibnamefont
+  {Yukhnovskii}},\ }\bibfield  {title} {\bibinfo {title} {The phase transition
+  of the first order in the critical region of the gas-liquid system},\ }\href
+  {https://doi.org/10.5488/cmp.17.43001} {\bibfield  {journal} {\bibinfo
+  {journal} {Condensed Matter Physics}\ }\textbf {\bibinfo {volume} {17}},\
+  \bibinfo {pages} {43001} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Attard}(1990)}]{attardJCP1990}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont

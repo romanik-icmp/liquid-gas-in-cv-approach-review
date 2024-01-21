@@ -11,11 +11,11 @@ A physical observable dependent on the particle coordinates is, in general, a fu
 \begin{equation}
 	n(\vb r) = \sum_{j=1}^{N} \delta(\vb r - \vb r_j),
 \end{equation}
-where $\vb r_j$ is the coordinate of the $j$-th particle, $N$ is the number of particles in the system, $\delta(...)$ is the Dirac's $\delta$-function. Imposing boundary periodic conditions, one can represent $n(\vb r)$ in the form of a Fourier series, see Appendix~\ref{sec:fourier}:
+where $\vb r_j$ is the coordinate of the $j$-th particle, $N$ is the number of particles in the system, $\delta(...)$ is the Dirac's $\delta$-function. The quantity $n(\vb r)$ can be represented in the form of a Fourier series, see Appendix~\ref{sec:fourier}:
 \begin{equation}
 	n(\vb r) = \frac{1}{V} \sum_{\vb k} \hat{\rho}_{\vb k} e^{i\vb k \vb r},
 \end{equation}
-where $\sum_{\vb k} = \sum_{k_x}\sum_{k_y}\sum_{k_z}$, $k_i = \frac{2\pi}{V^{1/3}}n_i$, $i=x,y,z$, $n_i=0,\pm 1, \pm 2, \dotsc$. $V$ is the periodicity volume for system's properties, so that
+where $\sum_{\vb k} = \sum_{k_x}\sum_{k_y}\sum_{k_z}$, $k_i = \frac{2\pi}{V^{1/3}}n_i$, $i=x,y,z$, $n_i=0,\pm 1, \pm 2, \dotsc$. $V$ is the system volume, so that
 $$ \int_V n(\vb r) d\vb r = N.$$
 The Fourier component $\hat{\rho}_{\vb k}$ is of the form:
 \begin{equation}
@@ -101,7 +101,7 @@ using the Morse potential
 	U_{Morse}(r) = \varepsilon \{\exp{[-2(r-R_0)/\alpha]}-2\exp{[-(r-R_0)/\alpha]}\}
 \end{equation}
 with $\varepsilon$ being the characteristic energy of the potential, $R_0$ the coordinate ot the minimum, and $\alpha$ the effective range of action.
-In what follows, we develop a general approach to deal with the system of interacting particles, and particular form of the reference system and attractive part of the potential will be chosen at the end to obtain some numerical and graphical results.
+In what follows, we develop a general approach to deal with the system of interacting particles. Particular forms of the reference system and attractive part of the potential are chosen to obtain some numerical and graphical results.
 
 In general we assume that the attractive part of the interaction potential possesses a well behaved Fourier component $\hat{\Phi}_{\vb k}$ such that:
 \begin{equation}
@@ -149,7 +149,7 @@ Let's consider a system characterized only by the repulsive part of the interact
 where $\mu_0$ is the RS chemical potential.
 Now, the GPF is expressed as
 \begin{equation}
-	\Xi = \Xi_0 \sum_{N=0}^{\infty} \frac{\exp(\beta\mu_0 N)}{N! \Lambda^{3N}} \int \frac{\exp(-\beta \Phi_N (\vb r^N))}{\Xi_0} \exp(\beta(\mu - \mu_0)N - \beta\Phi_N(\vb r^N)) {\rm d} {\vb r^N}.
+	\Xi = \Xi_0 \sum_{N=0}^{\infty} \frac{\exp(\beta\mu_0 N)}{N! \Lambda^{3N}} \int \frac{\exp(-\beta \Psi_N (\vb r^N))}{\Xi_0} \exp(\beta(\mu - \mu_0)N - \beta\Phi_N(\vb r^N)) {\rm d} {\vb r^N}.
 \end{equation}
 Taking into account~(\ref{phi_N_via_rho}) and~(\ref{def:rho_k}), the second exponent under the integral can be expressed in terms of $\hat{\rho}_{\vb k}$:
 \begin{equation}
@@ -275,5 +275,5 @@ The partition function is now written as
 	&&
 	\quad \times
 	\exp (i2\pi \sum\limits_{\bf k} \omega_{\bf k} \rho_{\bf k} + \sum_{n\ge 1} \frac{(-i2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n} {\mathfrak M}_n(\vb{k}_1,\dotsc,\vb{k}_n) \omega_{\vb k_1}\dotsc\omega_{\vb{k}_n})
-	(d\omega) (d\rho) \nonumber
+	({\rm d}\omega) ({\rm d}\rho) \nonumber
 \end{eqnarray}

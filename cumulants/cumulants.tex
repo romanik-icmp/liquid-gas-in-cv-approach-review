@@ -35,12 +35,12 @@ Continuing this procedure, for the next cumulants one gets:
 	\nonumber\\
 	&& -6 \langle \hat{\rho}_{\vb k_1} \rangle_0 \langle\hat{\rho}_{\vb k_2} \rangle_0 \langle\hat{\rho}_{\vb k_3} \rangle_0 \langle\hat{\rho}_{\vb k_4} \rangle_0
 \end{eqnarray}
-The expressions in the right-hand sides of~(\ref{m1_via_rho})-(\ref{m4_via_rho}) can be called cumulant averages of $\hat{\rho}_{\vb k}$, since they remind formulae for cumulants expressed via non-central moments. In other words, if $\langle\rho_{\vb k_1} \dotsc \rho_{\bf k_n} \rangle$ are considered non-central moments (of a probability distribution), then $\mathfrak{M}_n(\vb k_1, \dotsc, \vb k_n)$ can be considered as cumulants (semi-invariants) and the relationships between them are known.[Reference is needed; Kendall, Stuart, Advanced theory of statistics, 1969]
+The expressions in the right-hand sides of~(\ref{m1_via_rho})-(\ref{m4_via_rho}) can be called cumulant averages of $\hat{\rho}_{\vb k}$, since they remind formulae for cumulants expressed via non-central moments. In other words, if $\langle\rho_{\vb k_1} \dotsc \rho_{\bf k_n} \rangle$ are considered non-central moments (of a probability distribution), then $\mathfrak{M}_n(\vb k_1, \dotsc, \vb k_n)$ can be considered as cumulants (semi-invariants) and the relationships between them are known\cite{stuart2010kendall}.
 
-The calculation of the first two cumulants is presented in details in Appendix~\ref{app:cumulant_calc}. Explicit expressions for them are presented in the next Subsection~\ref{sec:cumulants_via_h}.
+As per our knowledge, the generic expression for cumulant average is not found so far, however, $\mathfrak{M}_n$ can be derived for any $n$ based on generating functional $\ln \tilde{\mathfrak{J}}(\omega)$ by virtue of~(\ref{def:cumulant}).
 
 \subsection{\label{sec:cumulants_via_h} Cumulants $\mathfrak M_n(\vb k^n)$ expressed via Fourier components of the total correlation functions $\hat{h}^{(n)}(\vb k^n)$}
-In this subsection, explicit expressions for cumulants $\mathfrak{M_n}$ are presented in terms of the Fourier components of total correlation functions $\hat{h}^{(n)}$. In Appendix~\ref{sec:total_corr_func} one can find more details about total correlation functions.
+In this subsection, explicit expressions for cumulants $\mathfrak{M_n}$ are presented in terms of the Fourier components of total correlation functions $\hat{h}^{(n)}$. See Appendix~\ref{sec:total_corr_func} for the definition and some properties of total correlation functions. The calculation of the first two cumulants is presented in details in Appendix~\ref{app:cumulant_calc}.
 \begin{equation}
 \label{CumulantM1}
 	\mathfrak M_1(\vb k) = \rho \hat{h}^{(1)}(\vb k) = \langle N \rangle_0 \delta_{\vb k}
@@ -58,7 +58,7 @@ In this subsection, explicit expressions for cumulants $\mathfrak{M_n}$ are pres
 	&&+ \rho^3 \hat{h}^{(3)}(\vb k_1, \vb k_2, \vb k_3) 
 	\nonumber \\
 	&=& \rho \hat{h}^{(1)}(\vb k_1 + \vb k_2 + \vb k_3) + 
-	\rho^2 \sum_{l_1,l_2,l_3=\left\{ \substack{1,2,3 \\ 1,3,2 \\ 2,3,1}
+	\rho^2 \sum_{{\vb l}=\left\{ \substack{1,2,3 \\ 1,3,2 \\ 2,3,1}
  		\right\}}
 	\hat{h}^{(2)}(\vb k_{l_1} + \vb k_{l_2}, \vb k_{l_3})
 	+ \rho^3 \hat{h}^{(3)}(\vb k_1, \vb k_2, \vb k_3)
@@ -131,11 +131,11 @@ Then
 
 This should be true for any $n$: a cumulant $\mathfrak M_n$ can be written in such a way, that dependence on $\vb k_n$ will be present only in $\delta_{\vb k_1 + \dotsc + \vb k_n}$, and other part, let's denote it by $\mathfrak m_n$, will depend only on $\vb k_1, \dotsc, \vb k_{n-1}$, or $\mathfrak m_n = \mathfrak m_n(\vb k^{n-1})$
 \begin{equation}
-	\mathfrak M_n(\vb k^n) = \langle N \rangle \delta_{\vb k_1 + \dotsc + \vb k_n} \mathfrak m_n(\vb k^{n-1}).
+	\mathfrak M_n(\vb k^n) = \langle N \rangle_0 \delta_{\vb k_1 + \dotsc + \vb k_n} \mathfrak m_n(\vb k^{n-1}).
 \end{equation}
 A few first $\mathfrak m_n$ are expressed via total correlation functions $\hat{h}^{(n)}$ as follows:
 \begin{equation}
-	\mathfrak m_1 = 1.
+	\mathfrak{m}_1 = 1.
 \end{equation}
 \begin{equation}
 	\label{m2}
@@ -147,20 +147,18 @@ A few first $\mathfrak m_n$ are expressed via total correlation functions $\hat{
 	+ \rho^2 \hat{h}^{(3)}(\vb k_1, \vb k_2)
 \end{equation}
 and the expression for $\mathfrak m_4$ is given by~(\ref{m4}).
-It is seen from~(\ref{m2}) that $\mathfrak m_2(\vb k)$ is the structure factor (see e.g Eq.~(3.6.10) in~\cite{HANSEN2013ch3}).
+It is seen from~(\ref{m2}) that $\mathfrak m_2(\vb k)$ is the structure factor (see e.g Eq.~(3.6.10) in~\cite{HANSEN2013ch3}). By analogy, $\mathfrak{m}_n$ can be considered as the $n$-particle structure factor.
 
 Expressions~(\ref{CumulantM1})-(\ref{CumulantM4}) for cumulants obtained in this work can be compared with corresponding expressions presented in other works.
-In~\cite{YukhJSP1995}, see Appendix B, and in~\cite{Idzik1987En}, see Eq.~(3.7), the expressions for $\mathfrak{M}_2$ through $\mathfrak{M}_4$ were presented in a similar form, but different permutations of wave-vector values were not accounted for. For example, it was considered that $\hat{h}^{(2)}(\vb k_1) + \hat{h}^{(2)}(\vb k_2) + \hat{h}^{(2)}(\vb k_1 + \vb k_2) = 3\hat{h}^{(2)}(\vb k_1)$.
-In~\cite{Yukh1989tmpEn}, see Eqs.~(2.6), (2.10), and (2.11), the expressions for $\mathfrak{M}_n(\vb k^n)$ were presented in a more complicated form, possibly due to the fact that correlation functions were defined in the canonical ensemble.
+In~\cite{YukhJSP1995} (see Appendix B therein), and in~\cite{Idzik1987En} (see Eq.~(3.7) therein), the expressions for $\mathfrak{M}_2$ through $\mathfrak{M}_4$ were presented in a similar form, but different permutations of wave-vector values were not accounted for. For example, it was considered that $\hat{h}^{(2)}(\vb k_1) + \hat{h}^{(2)}(\vb k_2) + \hat{h}^{(2)}(\vb k_1 + \vb k_2) = 3\hat{h}^{(2)}(\vb k_1)$.
+In~\cite{Yukh1989tmpEn} (see Eqs.~(2.6), (2.10), and (2.11) therein), the expressions for $\mathfrak{M}_n(\vb k^n)$ were presented in a more complicated form, possibly due to the fact that correlation functions were defined in the canonical ensemble.
 
 In~\cite{Pats1990tmf} the expressions analogous to~(\ref{CumulantM1})-(\ref{CumulantM4}) were written for cumulants of multicomponent system.
 
 
 [NOTE: Need to verify the generic formula for $\mathfrak M_n$, see e.g., Eq.~(2.12) in~\cite{Yukh1990}, Eq.~(2.4) in~\cite{Yukh1989tmpEn}, and Eq.~(3.6) in ~\cite{Idzik1987En}]
 
-What do we know about general expression for $\mathfrak{m_n}$? First, that the number of all terms contributing to $\mathfrak{m_n}$ is equal to the Bell number $B_n$ (see
-\href{https://en.wikipedia.org/wiki/Bell_number}{https://en.wikipedia.org/wiki/Bell\_number}). Second, if the terms are grouped by the powers in $\rho$ then the number of terms at the $k$-th power in $\rho$ is the Stirling number of the second kind $S(n,k)$ 
-\\(see \href{https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind}{https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind}).
+There are a few interesting properties to note about general expression for $\mathfrak{m_n}$. First, that the number of all terms contributing to $\mathfrak{m_n}$ is equal to the Bell number $B_n$\cite{cameron1995comb,wikiBellNum}. Second, if the terms are grouped by the powers in $\rho$ then the number of terms at the $k$-th power in $\rho$ is the Stirling number of the second kind $S(n,k)$\cite{cameron1995comb,wikiStirlingNum2}.
 
 \subsection{Explicit expressions for cumulants as functions of wave-vector and packing fraction}
 To start with, one can use an explicit equation for the structure factor of hard-spheres system. For example, let's use Eq.~(3) from~\cite{Ashcroft1966} for the structure factor as a function of wave-vector and packing fraction $\eta$ in the Percus-Yevick approximation
@@ -261,3 +259,30 @@ Here the final expressions are presented. They are obtained directly from~(\ref{
 	\nonumber\\
 	&=& \langle (N - \langle N \rangle_0)^4 \rangle_0 - 3 \langle (N - \langle N \rangle_0)^2 \rangle_0^2.
 \end{eqnarray}
+
+\subsection{Cumulants as functions of packing fraction for the hard-spheres system}
+For the system of hard spheres the cumulants $\mathfrak{m}_n$ can be found explicitly as functions of the packing fraction $\eta$ based on a given equation of state
+\begin{equation}
+	\frac{PV}{NkT} = f(\eta)
+\end{equation}
+where $f(\eta)$ is a function of the packing fraction only. The structure factor at zero wave-vector value is found via
+\begin{equation}
+	\mathfrak{m}_2 = S(0) = kT\left(\frac{\partial \rho}{\partial P}\right)_T.
+\end{equation}
+From here one has
+\begin{equation}
+	\frac{1}{\mathfrak{m}_2} = f(\eta) + \eta \frac{\partial f(\eta)}{\partial \eta}.
+\end{equation}
+For example, in~\cite{Idzik1987En}, the following expressions were obtained based on the equation of state by Carnahan and Starling~\cite{CarnahanStarling1969} for HS:
+\begin{equation}
+	\mathfrak{m}_2 = \frac{(1-\eta)^4}{(1+2\eta)^2 - 4\eta^3 + \eta^4},
+\end{equation}
+\begin{equation}
+	\mathfrak{m}_3 = \frac{(1-\eta)^7(1 - 5\eta - 20\eta^2 - 4\eta^3 + 5\eta^4 - \eta^5)}{((1+2\eta)^2 - 4\eta^3 + \eta^4)^3},
+\end{equation}
+\begin{eqnarray}
+	\mathfrak{m}_4 &=& (1-\eta)^{10}(1 - 26 \eta - 35\eta^2 + 408\eta^3 + 758\eta^4 + 28\eta^5 -
+	\nonumber\\
+	&&-114\eta^6 - 40\eta^7 + 37\eta^8 - 10\eta^9 + \eta^{10}) ((1+2\eta)^2 - 4\eta^3 + \eta^4)^{-5}.
+\end{eqnarray}
+Note that here the signs for the term $4\eta^3$ in $\mathfrak{m}_3$ and for $408\eta^3$ in $\mathfrak{m}_4$ were corrected.

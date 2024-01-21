@@ -10,12 +10,13 @@ The grand partition partition function is now written as
 	\exp (i2\pi \sum\limits_{\bf k} \omega_{\bf k} \rho_{\bf k} + \sum_{n\ge 1} \frac{(-i2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n} {\mathfrak M}_n(\vb{k}_1,\dotsc,\vb{k}_n) \omega_{\vb k_1}\dotsc\omega_{\vb{k}_n})
 	(d\omega) (d\rho) \nonumber
 \end{eqnarray}
-This expression was obtained in \cite{Yukh1990}, see Eq.(2.16).
+This expression was obtained in \cite{Yukh1990} (see Eq.(2.16) therein).
 
 The next step in calculation is to integrate over $\omega_{\vb k}$ with $\vb{k}>B$. This integration can be performed with Gaussian measure, i.e. the expressions in the exponent is restricted to the powers of $\omega$ not higher than 2. Let us denote the result of this integration by $\Xi_G$. Then the grand partition function takes the form:
-\be
-\Xi = \Xi_0\Xi_G\Xi_L
-\ee
+\begin{equation}
+	\label{Xi_as_prod}
+	\Xi = \Xi_0\Xi_G\Xi_L
+\end{equation}
 Here $\Xi_L$ denotes long-wave contributions to the GPF and is the object of our further investigation in this paper. The expression for $\Xi_L$ is following (see also Eq.(3.5) in \cite{Yukh1990}):
 \begin{eqnarray}
 	\label{gpf_l1}
@@ -28,15 +29,15 @@ Here $\Xi_L$ denotes long-wave contributions to the GPF and is the object of our
 	(d\omega)^{N_B} (d\rho)^{N_B} \nonumber
 \end{eqnarray}
 Here $\tilde{\frak M}_n$ denote renormalized cumulants ${\frak M}_n$ due to integration over $k>B$ [explicity expressions are needed?], and
-\be
+\begin{equation}
 (d\omega)^{N_B} (d\rho)^{N_B} = \left(\prod_{\vb k\atop k\le B}d\omega_{\vb k}^c d\rho_{\vb k}^c d\omega_{\vb k}^s d\rho_{\vb k}^s \right) d\omega_0 d\rho_0
-\ee
+\end{equation}
 
 In the approximation of the $4th$ basic measure density, $\Xi_L$ is expressed as:
-\be
+\begin{equation}
 \label{gpf_l3}
 \Xi_L = \int (1 + D_4 + \frac12D_4^2 + \dotsc) W_4 (\rho;\omega) (d\rho)^{N_B}(d\omega)^{N_B}, 
-\ee
+\end{equation}
 where the measure density $W_4(\rho; \omega)$ is
 \begin{eqnarray}
 	\label{meas_dens_1}
@@ -49,18 +50,18 @@ where the measure density $W_4(\rho; \omega)$ is
 	\omega_{{\vb k}_1} \dots \omega_{{\vb k}_n} \right\}.
 \end{eqnarray}
 and the following notation is introduced:
-\be
+\begin{equation}
 D_4 = \sum_{m>4}\frac{(-i2\pi)^m}{m!} \sum\limits_{\vb{k}_1,\dotsc,\vb{k}_m\atop{k_i \le B}}
 \tilde{\frak M}_n(\vb{k}_1,\dotsc,\vb{k}_m)
 \omega_{{\vb k}_1} \dots \omega_{{\vb k}_m}
-\ee
+\end{equation}
 
 The quantity $N_B$ is the number of variables to be integrated over. It is equal to the
 number of values that the wave vector takes on in the sphere of radius B in reciprocal space. Let's assume that the wave-vector values are distributed uniformly, then
-\be
+\begin{equation}
 \label{NB}
 N_B = \frac{B^3}{6\pi^2}V.
-\ee
+\end{equation}
 To derive this equation, consider the following arguments. If we had a simple cubic lattice of spacing
 $c$ in real space, the first Brillouin zone of it would be a simple cubic lattice in the reciprocal
 space with spacing $2B'$, where $B'=\pi/c$. The number of values taken by wave vector in this zone
@@ -73,21 +74,21 @@ In the current investigation the following approximations are to be applied.
 {\it Approximation 1.} $D_4$ is neglected in the expression (\ref{gpf_l3}) for $\Xi_L$;
 
 {\it Approximation 2.} The difference between renormalized values of cumulants $\tilde{\frak M}_n$ and original cumulants $\frak M_n$ is ignored, so that:
-\be
+\begin{equation}
 \tilde{\frak M}_n(\vb k^n) \approx \frak M_n(\vb k^n)
-\ee
+\end{equation}
 
 {\it Approximation 3.} The dependence of cumulants $\frak M_n$ on the wave vectors $\vb k_i$ is neglected, except for the dependence via $\delta$-functions
-\be
+\begin{equation}
 \frak{M}_n({\vb k}^n) \approx \frak{M}_n(0^n) \delta_{\vb{k}_1 + \dotsc + \vb{k}_n}
-\ee
+\end{equation}
 where the following notation is used for simplicity: ${\vb k}^n\equiv {\vb k}_1, \dotsc, {\vb k}_n$.
 
 With these approximations applied, one arrives at the following expressions:
-\be
+\begin{equation}
 \label{gpf_l4}
 \Xi_L = \int W_4 (\rho;\omega) (d\rho)^{N_B}(d\omega)^{N_B}, 
-\ee
+\end{equation}
 and
 \begin{eqnarray}
 	\label{meas_dens_2}
@@ -104,9 +105,9 @@ and
 See also Eqs.~(3.12),~(3.13) in \cite{Yukh1990}.
 
 The expression \ref{meas_dens_2} for the $4$-th measure density contains non-zero terms in all powers of $\omega$ up to 4. Let's eliminate the coefficient next to the 3-rd power in $\omega$. For this, the following change of variables is performed:
-\be
+\begin{equation}
 \omega_0 = \omega'_0 + \frac{\frak M_3}{(i2\pi) \frak M_4}
-\ee
+\end{equation}
 From now on, we will understand $\frak M_n$ as $\frak{M}_n(0^n)$ where it is not ambiguous. One should remember that $\frak M_n$ are still dependent on the packing fraction $\eta$.
 The 4-th measure density $W_4(\rho; \omega)$ takes the form:
 
@@ -127,24 +128,27 @@ The 4-th measure density $W_4(\rho; \omega)$ takes the form:
 	\omega_{{\vb k}_1} \dots \omega_{{\vb k}_4} \right\}
 \end{eqnarray}
 with
-\be
-\frak M_0 = -\frac{\frak M_1 \frak M_3}{\frak M_4} + \frac{\frak M_2 \frak M_3^2}{2 \frak M_4^2}
-- \frac{\frak M_3^4}{8\frak M_4^3},
-\ee
+\begin{equation}
+	\label{def:M_0}
+	\frak M_0 = -\frac{\frak M_1 \frak M_3}{\frak M_4} + \frac{\frak M_2 \frak M_3^2}{2 \frak M_4^2}
+	- \frac{\frak M_3^4}{8\frak M_4^3},
+\end{equation}
 
-\be
-\tilde{\frak M}_1 = \frak M_1 -\frac{\frak M_2 \frak M_3}{\frak M_4} + \frac{\frak M_3^3}{3\frak M_4^2},
-\ee
+\begin{equation}
+	\label{def:tilde_M_1}
+	\tilde{\frak M}_1 = \frak M_1 -\frac{\frak M_2 \frak M_3}{\frak M_4} + \frac{\frak M_3^3}{3\frak M_4^2},
+\end{equation}
 
-\be
-\tilde{\frak M}_2 = \frak M_2 - \frac{\frak M_3^2}{2 \frak M_4}.
-\ee
+\begin{equation}
+	\label{def:tilde_M_2}
+	\tilde{\frak M}_2 = \frak M_2 - \frac{\frak M_3^2}{2 \frak M_4}.
+\end{equation}
 In (\ref{meas_dens_3}) the prime at $\omega_0$ is omitted.
 
 We also want to eliminate the term at $\omega_0$. This is achieved by the change of variables
-\be
+\begin{equation}
 \rho_0 = \rho'_0 + \tilde{\frak M}_1.
-\ee
+\end{equation}
 The expression for $W_4(\rho; \omega)$ becomes
 \begin{eqnarray}
 	\label{meas_dens_4}
@@ -184,10 +188,10 @@ We can compare the expression~(\ref{meas_dens_4}) with Eq.~(3.14) from \cite{Yuk
 			\hline
 			Approximation & $\eta_{min}$ & $\eta_{max}$ \\
 			\hline
-			Percus-Yevick, compressibility equation \quad & 0.037346 \quad & 0.221675 \quad \\
-			Percus-Yevick, virial equation          & 0.037673 & 0.233899 \\
-			Carnahan-Starling                       & 0.037455 & 0.225572 \\
-			Ree-Hoower                              & 0.037423 & 0.224260 \\
+			Percus-Yevick, compressibility equation~\cite{WertheimPRL1963} \quad & 0.037346 \quad & 0.221675 \quad \\
+			Percus-Yevick, virial equation~\cite{ThieleJCP1963}          			& 0.037673 & 0.233899 \\
+			Carnahan-Starling~\cite{CarnahanStarling1969}		& 0.037455 & 0.225572 \\
+			Ree-Hoover~\cite{ReeHooverJCP1964}					& 0.037423 & 0.224260 \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -329,11 +333,12 @@ where the following equations were taken into account
 
 Finally, the quantity $\Xi_L$ takes the form
 \begin{equation}
+	\label{Xi_L}
 	\Xi_L = jQ(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)^{N_B} \exp(\tilde{\mathfrak{M}}_0) \Xi_L^{(1)}
 \end{equation}
 where $Q(\tilde{\mathfrak{M}_2}, \mathfrak{M}_4)$ is given by~(\ref{quantity_Q}), $N_B$ by~(\ref{NB}), $\tilde{\mathfrak{M}_0}$ by~(\ref{tilde_frak_M0}), and $\Xi_L^{(1)}$ is defined as follows
 \begin{equation}
-	\label{Xi_L}
+	\label{Xi_L_1}
 	\Xi_L^{(1)} = \int \exp(\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B}} d(k) \rho_{\vb k} \rho_{-\vb k} - \frac{a_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} ) ({\rm d} \rho)^{N_B}
 \end{equation}
 where $\mu^*$ is given by~(\ref{mu_star}), and 

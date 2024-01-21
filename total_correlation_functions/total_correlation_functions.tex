@@ -1,10 +1,10 @@
 \section{\label{sec:total_corr_func} Total correlation functions}
 \subsection{Definitions}
 The definition of the n-particle distribution function is taken from \cite{HANSEN2013ch2} (see Eq.~(2.6.7) therein)
-\be
+\begin{equation}
 \label{def:g_n}
 g^{(n)}(\vb{r}^n)=\frac{\rho^{(n)}(\vb{r}_1,\dotsc,\vb{r}_n)}{\prod_{i=1}^{n}\rho^{(1)}(\vb{r}_i)}
-\ee
+\end{equation}
 where $\rho^{(n)}$ is the n-particle density (see Eq.~(2.6.1) in \cite{HANSEN2013ch2}), which is defined as:
 \begin{eqnarray}
 	\label{def:rho_n}
@@ -13,37 +13,37 @@ where $\rho^{(n)}$ is the n-particle density (see Eq.~(2.6.1) in \cite{HANSEN201
 Here $\vb r^n \equiv \vb r_1, \dotsc, \vb r_n$, and $d\vb r^{(N-n)} = d\vb r_{n+1} \dotsc d\vb r_N$.
 
 Let's introduce an hierarchy of total correlation functions. The most widely known element of this hierarchy is the pair correlation function
-\be
+\begin{equation}
 \label{def:pair_corr_func}
 h^{(2)}(\vb{r}_1,\vb{r}_2) = g^{(2)}(\vb{r}_1,\vb{r}_2) - 1
-\ee
+\end{equation}
 (e.g., see Eq.~(2.6.8) in~\cite{HANSEN2013ch2}).
 
 Let's express the total correlation functions in terms of the n-particle distribution functions.
 Formally, one can introduce the hierarchy of total correlation functions starting from $n=1$ and on.
 By definition
-\be
+\begin{equation}
 g^{(1)}(\vb{r})\equiv 1.
-\ee
+\end{equation}
 Thus, for $n=1$ one has: 
-\be
+\begin{equation}
 h^{(1)}(\vb{r}) = g^{(1)}(\vb{r}) = 1.
-\ee
+\end{equation}
 
 For $n=2$:
-\be
+\begin{equation}
 h^{(2)}(\vb{r}_1,\vb{r}_2) = g^{(2)}(\vb{r}_1,\vb{r}_2) - 1
-\ee
+\end{equation}
 
 For $n=3$:
-\bea
+\begin{eqnarray}
 h^{(3)}(\vb{r}_1 ,\vb{r}_2, \vb{r}_3) &=& g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) - g^{(2)}(\vb{r}_1, \vb{r}_2) 
 \nonumber\\
 &&-g^{(2)}(\vb{r}_1,\vb{r}_3) -  g^{(2)}(\vb{r}_2,\vb{r}_3) +2.
-\eea
+\end{eqnarray}
 
 For $n=4$ :
-\bea
+\begin{eqnarray}
 h^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) &=& g^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) - g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) 
 \nonumber\\
 &&-g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_4) -  g^{(3)}(\vb{r}_1, \vb{r}_3, \vb{r}_4) - g^{(3)}(\vb{r}_2, \vb{r}_3, \vb{r}_4) 
@@ -55,21 +55,21 @@ h^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) &=& g^{(4)}(\vb{r}_1, \vb{r}_2, 
 &&+g^{(2)}(\vb{r}_2,\vb{r}_3) + g^{(2)}(\vb{r}_2,\vb{r}_4) + g^{(2)}(\vb{r}_3,\vb{r}_4)) 
 \nonumber\\
 &&-6.
-\eea
+\end{eqnarray}
 
 \subsection{Expressed via $g^{(n)}$ and $h^{(m<n)}$}
 The total correlation functions $h^{(n)}$ can be expressed via $g^{(n)}$ and $h^{(m<n)}$.
 Such representation for total correlation functions $h^{(3)}$ and $h^{(4)}$ was used in \cite{attardJCP1990}.
 
 For $n=3$:
-\bea
+\begin{eqnarray}
 h^{(3)}(\vb{r}_1 ,\vb{r}_2, \vb{r}_3) &=& g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) - h^{(2)}(\vb{r}_1, \vb{r}_2) 
 \nonumber\\
 &&-h^{(2)}(\vb{r}_1,\vb{r}_3) -  h^{(2)}(\vb{r}_2,\vb{r}_3) -1.
-\eea
+\end{eqnarray}
 
 For $n=4$:
-\bea
+\begin{eqnarray}
 h^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) &=& g^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) - h^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) 
 \nonumber\\
 &&-h^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_4) -  h^{(3)}(\vb{r}_1, \vb{r}_3, \vb{r}_4) - h^{(3)}(\vb{r}_2, \vb{r}_3, \vb{r}_4) 
@@ -81,24 +81,24 @@ h^{(4)}(\vb{r}_1, \vb{r}_2, \vb{r}_3, \vb{r}_4) &=& g^{(4)}(\vb{r}_1, \vb{r}_2, 
 &&-h^{(2)}(\vb{r}_2,\vb{r}_3) - h^{(2)}(\vb{r}_2,\vb{r}_4) - h^{(2)}(\vb{r}_3,\vb{r}_4) 
 \nonumber\\
 &&-1.
-\eea
+\end{eqnarray}
 
 From here it's straightforward to express $g^{(n)}$ via $h^{(m)}$, where $m \leq n$ (in \cite{hernandoPRA1986} such expressions were presented for $n\leq3$).
 
 \subsection{Expressed via $g^{(n)}$ through $g^{(1)}$}
 For $n=2$:
-\be
+\begin{eqnarray}
 h^{(2)}(\vb{r}_1,\vb{r}_2) = g^{(2)}(\vb{r}_1,\vb{r}_2) - g^{(1)}(\vb{r}_1) g^{(1)}(\vb{r}_2)
-\ee
+\end{eqnarray}
 
 For $n=3$:
-\bea
+\begin{eqnarray}
 h^{(3)}(\vb{r}_1 ,\vb{r}_2, \vb{r}_3) &=& g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) - g^{(2)}(\vb{r}_1, \vb{r}_2) g^{(1)}(\vb{r}_3)
 \nonumber\\
 &&-g^{(2)}(\vb{r}_1,\vb{r}_3) g^{(1)}(\vb{r}_2) -  g^{(2)}(\vb{r}_2,\vb{r}_3) g^{(1)}(\vb{r}_1)
 \nonumber\\
 && +2g^{(1)}(\vb{r}_1)g^{(1)}(\vb{r}_2)g^{(1)}(\vb{r}_3).
-\eea
+\end{eqnarray}
 
 For $n=4$ :
 \begin{eqnarray}
@@ -142,44 +142,44 @@ The sums extend over all distinct argument lists in which each point appears exa
 
 \subsection{Fourier components of total correlation functions}
 The following generic notation is used for the Fourier components of the total correlation function:
-\be
+\begin{equation}
 \hat{h}^{(n)}(\vb{k}_1,\dotsc, \vb{k}_n) = \int \exp(-i\vb{k}_1\vb{r}_1 - \dotsc - i\vb{k}_n\vb{r}_n) h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_n) d\vb{r}_1\dotsc d\vb{r}_n
-\ee
+\end{equation}
 By properly selecting the origin, it can be shown that for a homogeneous isotropic system:
-\be
+\begin{equation}
 g^{(n)}(\vb{r}_1, \dotsc, \vb{r}_n) = g^{(n)}(\vb{r}_1 - \vb{r}_n, \dotsc, \vb{r}_{n-1} - \vb{r}_{n})
-\ee
+\end{equation}
 and applying a proper change of variables it can be written as:
-\be
+\begin{equation}
 g^{(n)} = g^{(n)}(\vb{r}_1, \dotsc, \vb{r}_{n-1})
-\ee
+\end{equation}
 Thus,
-\be
+\begin{equation}
 h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_n) \Rightarrow h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_{n-1})
-\ee
+\end{equation}
 
 It enables us to write the following expressions for the Fourier components $\hat{h}^{(n)} (\vb{k}^n)$:
-\be
+\begin{equation}
 \frac{1}{V}\hat{h}^{(n)} (\vb{k}^n) = \hat{h}^{(n)} (\vb{k}_1, \dotsc, \vb{k}_{n-1}) 
 \delta_{\vb{k}_1+\dotsc + \vb{k}_n}
-\ee
+\end{equation}
 where
-\be
+\begin{equation}
 \hat{h}^{(n)}(\vb{k}_1, \dotsc, \vb{k}_{n-1}) = \int \exp(-i\vb{k}_1\vb{r}_1 - \dotsc - i\vb{k}_{n-1}\vb{r}_{n-1}) h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_{n-1})d\vb{r}_1\dotsc d\vb{r}_{n-1}
-\ee
+\end{equation}
 
 In particular, for $n=1$:
-\be
+\begin{equation}
 \hat{h}^{(1)}(\vb{k}) = \int \exp(-i\vb{k}\vb{r})h^{(1)}(\vb{r})d\vb{r} = \int \exp(-i\vb{k}\vb{r})d\vb{r}
-\ee
-\be
+\end{equation}
+\begin{equation}
 \frac{1}{V}\hat{h}^{(1)}(\vb{k}) = \delta_{\vb{k}}
-\ee
+\end{equation}
 
 For $n=2$:
-\be
+\begin{equation}
 \frac{1}{V}\hat{h}^{(2)}(\vb{k}_1, \vb{k}_2) = \hat{h}^{(2)}(\vb{k}_1)\delta_{\vb{k}_1 + \vb{k}_2}
-\ee
+\end{equation}
 
 \subsection{Fourier transform of the radial correlation function for the hard-spheres system}
 From~\cite{Ashcroft1966} (see Eqs.~(3)-(5) therein) an explicit expression for $\hat{h}^{(2)}(k)$ can be calculated in the Percus-Yevick approximation.
